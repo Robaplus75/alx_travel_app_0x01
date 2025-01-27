@@ -2,9 +2,16 @@ from pathlib import Path
 
 import environ
 
+# ENV VARIABLES NEEDED:
+#   'DJANGO_SECRET_KEY'
+#   'DATABASE_URL':
+#       POSTGRESQL: DATABASE_URL =  'postgres://USER:PASSWORD@HOST:PORT/NAME'
+#       MYSQL: DATABASE_URL      =  'mysql://username:password@localhost:3306/mydatabase'
+#       SQLITE: DATABASE_URL     =  'sqlite:///path/to/your/db.sqlite3'
 # Initialize environment variables
+
 env = environ.Env()
-environ.Env.read_env()  # Reads the .env file
+environ.Env.read_env('.env')  # Reads the .env file
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
